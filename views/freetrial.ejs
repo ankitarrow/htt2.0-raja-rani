@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Raja-Rani</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<h1 style="display: block;">Welcome <%=y%></h1>
+<body>
+    <main class="container">
+        <section class="main-video">
+            <video src="videos/manipulate text background.mp4" controls autoplay muted></video>
+            <h3 class="title">Raja-Rani</h3>
+        </section>
+
+        <section class="video-playlist">
+            <h3 class="title">Raja-Rani</h3>
+            <p>10 lessons &nbsp; . &nbsp; 50m 48s</p>
+            <div class="videos"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+   
+    <div class="progress-container">
+        <div class="progress-ring">
+            <div class="progress-fill"></div>
+        </div>
+        <div class="progress-text">0%</div>
+    </div>
+    
+    <button id="certificate-btn" class="get-certificate" onclick="if (this.style.backgroundColor === 'green') window.location.href='/download'">Get Certificate</button>
+
+    
+</body>
+</html>

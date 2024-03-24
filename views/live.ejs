@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Live Stream Embed</title>
+</head>
+<body>
+  <div id="player"></div>
+
+  <script>
+    // Replace with your API key
+    const API_KEY = 'AIzaSyBznfYX4fzt4PDB5xmDdftql2wuIgPoBEg';
+
+    // Replace with the user's channel ID
+    const CHANNEL_ID = 'UCxSyNPwL8d3-Ig_V_OF0Xkg';
+
+    // Helper function to make API requests
+    function makeRequest(url) {
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.onload = () => resolve(xhr.responseText);
+        xhr.onerror = () => reject(xhr.statusText);
+        xhr.send();
+      });
+    }
+
+    // Function to embed the live stream
+    function embedLiveStream(videoId) {
+      const player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: videoId,
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    // Load the YouTube API
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // When the YouTube API is ready
+    window.onYouTubeIframeAPIReady = () => {
+      // Search for live streams on the user's channel
+      const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&maxResults=1&type=video&eventType=live`;
+
+      makeRequest(url)
+        .then(response => {
+          const data = JSON.parse(response);
+          if (data.items.length > 0) {
+            const videoId = data.items[0].id.videoId;
+            embedLiveStream(videoId);
+          } else {
+            console.log('No live stream found.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    };
+
+    // Player event handlers (optional)
+    function onPlayerReady(event) {
+      // Player is ready, you can perform additional actions here
+    }
+
+    function onPlayerStateChange(event) {
+      // Player state has changed, you can handle the different states here
+    }
+  </script>
+</body>
+</html>
