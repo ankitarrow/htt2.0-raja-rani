@@ -21,13 +21,21 @@
             background-size: cover;
             background-position: center;
             font-weight: bold; /* Make the whole text bolder */
+            color: #000000; /* Set font color to dark black */
         }
 
-        header {
+        #about h1 {
+            font-size: 55px; /* Increase font size */
+            font-weight: bold; /* Make it bold */
+            margin-top: -55px; /* Move it upwards */
+        }
+        
+
+     /*header {
             background-color: #333;
             color: #fff;
             padding: 10px 0;
-        }
+        }*/
 
         nav ul {
             list-style-type: none;
@@ -102,6 +110,33 @@
             font-family: 'Lato', sans-serif;
             font-weight: 400;
         }
+        .card {
+            margin-bottom: 20px;
+            border-radius: 20px; /* Border radius for smoother curvature */
+            padding: 20px;
+            background-color: #ffffcc; /* Light yellow color */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Border shadow */
+        }
+        
+        /* Apply border-radius to top left and bottom right corners */
+        .card:nth-child(odd) {
+            border-radius: 20px 0 0 20px;
+        }
+        
+        .card:nth-child(even) {
+            border-radius: 0 20px 20px 0;
+        }
+        
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-content {
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -111,43 +146,65 @@
 
     <section id="about">
         <div class="container">
-           <div style=""><h1>About Us</h1></div> <!-- Changed to h1 -->
-            <p>Raja Rani Coaching is not just a coaching center; it's a nurturing ground for aspiring tailors to turn their passion into expertise. With a rich heritage in tailoring and a commitment to excellence, we are dedicated to equipping individuals with the skills and knowledge needed to excel in the dynamic world of fashion and garment making.</p>
+            <h1>About Us</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-title">Mission</div>
+                        <div class="card-content">
+                            <p>Raja Rani Coaching, our mission is simple yet profound: to empower individuals with the artistry and craftsmanship of tailoring, enabling them to pursue their dreams with confidence and skill. We believe in fostering creativity, innovation, and professionalism in every stitch.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-title">Vision</div>
+                        <div class="card-content">
+                            <p>Our vision is to create a community of proficient tailors who not only master the technical aspects of the craft but also embrace its artistic and entrepreneurial dimensions. We envision a world where the legacy of tailoring thrives, and every garment tells a story of skill, passion, and precision.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-title">Our Approach</div>
+                        <div class="card-content">
+                            <p>At Raja Rani Coaching, we take a holistic approach to tailoring education, blending traditional techniques with modern practices. Our experienced instructors provide hands-on training, personalized guidance, and industry insights to ensure that each learner develops a strong foundation and a unique style in tailoring.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-title">Meet Our Instructors</div>
+                        <div class="card-content">
+                            <p>Our team of instructors comprises seasoned professionals with years of experience in the field of tailoring and fashion design
+                                . Passionate about sharing their knowledge and skills, they are committed to guiding and inspiring learners on their journey to mastery.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-title">Our Courses</div>
+                            <div class="card-content">
+                                <p>We offer a comprehensive range of courses designed to cater to all skill levels and interests. From basic sewing skills to advanced pattern making and garment construction, our curriculum is carefully crafted to equip learners with the knowledge and expertise needed to succeed in the competitive fashion industry.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-title">Our Community</div>
+                            <div class="card-content">
+                                <p>Join our vibrant community of aspiring tailors, where you can connect with fellow learners, share ideas, seek advice, and celebrate your progress. Whether you're a beginner or an experienced tailor, you'll find a supportive and inclusive environment to nurture your passion and hone your craft.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <footer>
             
-            <h3 class="mission">Our Mission</h3>
-            <p class="mission">At Raja Rani Coaching, our mission is simple yet profound: to empower individuals with the artistry and craftsmanship of tailoring, enabling them to pursue their dreams with confidence and skill. We believe in fostering creativity, innovation, and professionalism in every stitch.</p>
-            
-            <h3 class="vision">Our Vision</h3>
-            <p class="vision">Our vision is to create a community of proficient tailors who not only master the technical aspects of the craft but also embrace its artistic and entrepreneurial dimensions. We envision a world where the legacy of tailoring thrives, and every garment tells a story of skill, passion, and precision.</p>
-            
-            <h3>Our Approach</h3>
-            <p>At Raja Rani Coaching, we take a holistic approach to tailoring education, blending traditional techniques with modern practices. Our experienced instructors provide hands-on training, personalized guidance, and industry insights to ensure that each learner develops a strong foundation and a unique style in tailoring.</p>
-            
-
-            <h3>Meet Our Instructors</h3>
-            <p>Our team of instructors comprises seasoned professionals with years of experience in the field of tailoring and fashion design. Passionate about sharing their knowledge and skills, they are committed to guiding and inspiring learners on their journey to mastery.</p>
-            
-            <h3>Our Courses</h3>
-            <p>We offer a comprehensive range of courses designed to cater to all skill levels and interests. From basic sewing skills to advanced pattern making and garment construction, our curriculum is carefully crafted to equip learners with the knowledge and expertise needed to succeed in the competitive fashion industry.</p>
-            <!-- Add Submit Button to Redirect to Courses Page -->
-            <form action="/index1">
-                <button type="submit" class="submit-button courses-button">Our courses</button>
-            </form>
-            
-            
-            
-            <h3>Join Our Community</h3>
-            <p>Join our vibrant community of aspiring tailors, where you can connect with fellow learners, share ideas, seek advice, and celebrate your progress. Whether you're a beginner or an experienced tailor, you'll find a supportive and inclusive environment to nurture your passion and hone your craft.</p>
-            <!-- Add Second Submit Button to Redirect to Courses Page -->
-            <form action="courses.html">
-                <button type="submit" class="submit-button courses-button">Join our community forum</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-       
-    </footer>
-</body>
-</html>
-
+        </footer>
+    </body>
+    <button><a href="/">homepage</a></button>
+    </html>
+    

@@ -44,11 +44,14 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 const paymentController = require('./controllers/paymentController');
 
-app.get('/index1/p', paymentController.renderBuyPage);
+app.get('/order/p', paymentController.renderBuyPage);
 app.post('/payment', paymentController.payment);
 app.get('/success', paymentController.success);
 app.get('/failure', paymentController.failure);
 
+app.post('/order/payment', (req, res) => {
+  res.redirect('/index1');
+});
 
 
 
@@ -69,7 +72,7 @@ app.get('/download', (req, res) => {
     course:course});
 });
 app.get('/order', (req, res) => {
-    res.render('order.ejs');
+    res.render('order.ejs',{x:x});
 });
 app.get('/freetrial', (req, res) => {
     if (x == "(SIGN IN)") {
@@ -122,7 +125,7 @@ app.post('/login', async (req, res) => {
             y=user.username;
             x = "(logout)";
     
-            /*res.render('index.ejs', { x: x });*/
+            /res.render('index.ejs', { x: x });/
             res.redirect('/');
         } else {
             res.send('<script>alert("User not found"); window.location="/login";</script>');
