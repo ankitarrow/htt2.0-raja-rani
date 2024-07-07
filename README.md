@@ -56,6 +56,8 @@ platform for aspiring tailors to engage in discussions, seek advice, share tips 
 
 7.Live Demonstrations and Workshops: Live streaming sessions and virtual workshops will be offered, where expert tailors demonstrate techniques, share insights, and provide hands-on guidance to learners.
 
+8.Integrated Payment Gateway :  STRIPE was integrated as a payment gateway and all transactions and payments can be done through card.
+
 # Conclusion :
 Through these features, our website not only educates but also cultivates a vibrant community of aspiring tailors, facilitating their journey towards mastery in the art of tailoring. Join us at Raja Rani Tailoring Coaching and embark on your path to skill enhancement and creative expression.
 
